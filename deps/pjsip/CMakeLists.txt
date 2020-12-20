@@ -115,11 +115,12 @@ if(UNIX)
             set(PJLIB_SUFFIX "${CMAKE_SYSTEM_PROCESSOR}-apple-darwin_ios")
         else()
             # set library suffix name for MacOSX
-            execute_process(
-                COMMAND gcc -dumpmachine
-                OUTPUT_VARIABLE PJLIB_SUFFIX
-                ERROR_QUIET
-                OUTPUT_STRIP_TRAILING_WHITESPACE)
+#            execute_process(
+#                COMMAND gcc -dumpmachine
+#                OUTPUT_VARIABLE PJLIB_SUFFIX
+#                ERROR_QUIET
+#                OUTPUT_STRIP_TRAILING_WHITESPACE)
+             set(PJLIB_SUFFIX "arm-apple-darwin20.2.0")
         endif()
     else()
         if(ANDROID)
